@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "flaskkub-d14c"
+    labels:
+        app: "flaskkub-d14c"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: flaskkub93df-flaskkub-d14c.a2a6c9f1e0b54cee9fc0.germanywestcentral.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "flaskkub-d14c"
+                servicePort: 5000
